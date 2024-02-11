@@ -1,20 +1,39 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import Table from './Table'
 import './ManagePost.css';
 
-const initialData = [
-    { id: 1, username: 'User1', story: 'Story 1', likes: 10 },
-    { id: 2, username: 'User2', story: 'Story 2', likes: 20 },
-    { id: 3, username: 'User3', story: 'Story 3', likes: 30 },
-  ];
+
 
 function ManagePost() {
 
-  const [tableData, setTableData] = useState(initialData);
+
+  const [tableData, setTableData] = useState([]);
+
+  const get_API = "http://localhost:5000/story";
+   
+
+  useEffect(() => {
+      fetchData();
+  }, []);
+
+  
+  const fetchData = async () => {
+      try {
+          const response = await fetch(get_API);
+          if (!response.ok) {
+              throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setTableData(data);
+      } catch (error) {
+          console.error('Error fetching data:', error);
+      }
+  };
 
   const handleDelete = (id) => {
     // Remove the item with the specified id from the data
-    const updatedData = tableData.filter((item) => item.id !== id);
+    const updatedData = tableData.filter((item) => item._id !== id);
+    // console.log(_id);
     setTableData(updatedData);
   };
 

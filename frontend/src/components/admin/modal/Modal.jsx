@@ -16,8 +16,8 @@ const ModalComponent = ({ isOpen, closeModal, userData }) => {
       <div>
         <span className="close" onClick={closeModal}>&times;</span>
         <h2>User Details</h2>
-        <p><strong>Username:</strong> {userData.username}</p>
-        <p><strong>Text:</strong> {userData.story}</p>
+        <p><strong>Username:</strong> {userData.name}</p>
+        <p><strong>Text:</strong> {userData.text}</p>
       </div>
     </Modal>
   );

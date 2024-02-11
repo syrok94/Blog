@@ -4,10 +4,14 @@ import './PostForm.css';
 
 function PostForm() {
 
+    const post_API = "http://localhost:5000/story";
+
     const [formData, setFormData] = useState({
-        username: '',
-        content: '',
+        name: '',
+        text: '',
     });
+
+
 
     const handleChange = (e) => {
         setFormData({
@@ -16,17 +20,28 @@ function PostForm() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const  handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Add logic to send data to the backend/API
-        console.log('Form submitted:', formData);
-        
-        // Reset form fields
-        setFormData({
-            username: '',
-            content: '',
-        });
+        try {
+            const  response = await fetch(post_API, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (!response.ok) {
+                throw new Error('Failed to add item');
+            }
+            setFormData({
+                name: '',
+                text: '',
+            });
+            
+        } catch (error) {
+            console.error('Error adding item:', error);
+        }
     };
 
     return (
@@ -35,18 +50,18 @@ function PostForm() {
                 <label htmlFor="username">Username:</label>
                 <input
                     type="text"
-                    id="username"
-                    name="username"
-                    value={formData.username}
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     required
                 />
 
                 <label htmlFor="content">Content:</label>
                 <textarea
-                    id="content"
-                    name="content"
-                    value={formData.content}
+                    id="text"
+                    name="text"
+                    value={formData.text}
                     onChange={handleChange}
                     rows="4"
                     required
@@ -57,5 +72,6 @@ function PostForm() {
         </div>
     )
 }
+
 
 export default PostForm

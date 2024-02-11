@@ -1,0 +1,16 @@
+.manage-post{
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .manage-post{
+        width: 85%;
+        margin: auto;
+    }
+}

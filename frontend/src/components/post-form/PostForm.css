@@ -1,0 +1,35 @@
+
+.post-form{
+    width: 100%;
+    margin: auto;
+}
+
+.post-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-form label {
+    margin-bottom: 5px;
+  }
+  
+  .post-form input,
+  textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .post-form  button {
+    background-color: rgb(255, 110, 110);;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .post-form button:hover {
+    background-color:rgb(0, 0, 0);;
+  }

@@ -1,0 +1,27 @@
+.homepage{
+    width: 100%;
+}
+
+.homepage-content{
+    display: flex; /* or display: grid; for the CSS Grid version */
+    flex-wrap:wrap;
+    justify-content: space-around;
+    max-width: 800px; 
+    margin: auto;
+    margin-top: 50px;
+}
+
+.grid-item {
+    width: 1000px;
+    height: 400px;
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width : 786px){
+    .grid-item{
+        height: 650px;
+    }
+  }

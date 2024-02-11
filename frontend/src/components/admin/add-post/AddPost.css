@@ -1,0 +1,156 @@
+/* AddPostForm.css */
+
+.AddPost{
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+  }
+
+.AddPost-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.AddPostList{
+    width: 60%;
+    overflow: hidden;
+}
+
+.AddPostForm{
+    width: 30%;
+}
+
+.AddPost-container div {
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+  .AddPostForm form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .AddPostForm label {
+    margin-bottom: 5px;
+  }
+  
+  .AddPostForm input,
+  textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .AddPostForm  button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .AddPostForm button:hover {
+    background-color: #45a049;
+  }
+  
+
+ .AddPostList table {
+    overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; 
+    overflow: scroll;
+ }
+  
+  
+  .AddPostList th, td {
+    padding: 12px;
+    text-align: left;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+  }
+
+
+
+  .AddPostList th {
+    background-color: #00000098;
+    color: #fff;
+  }
+  
+  .AddPostList tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  .AddPostList  .add{
+    margin-bottom: 15px;
+    padding: 10px;
+    margin-left: 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .AddPostList  .read{
+    margin-bottom: 15px;
+    padding: 10px;
+    margin-left: 15px;
+    background-color: #4c94e7;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .AddPostList .delete{
+    margin-bottom: 15px;
+    padding: 10px;
+    margin-left: 15px;
+    background-color: #a71a1a;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .addpostbuttons{
+    display: flex;
+
+  }
+  
+
+  @media (max-width: 768px) {
+    .AddPost{
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .AddPost-container{
+      width: 100%;
+      flex-direction: column;
+    }
+    .AddPostList{
+      width: 80%;
+    }
+
+    .AddPostForm{
+      width: 80%;
+    }
+
+    .addpostbuttons{
+      display: flex;
+      flex-direction: column;
+    }
+  }

@@ -3,7 +3,7 @@ import './Table.css';
 import ModalComponent from '../modal/Modal';
 
 
-const Table = ({ data }) => {
+const Table = ({ data, onDelete }) => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedUser, setSelectedUser] = useState({});
@@ -16,27 +16,6 @@ const Table = ({ data }) => {
       const closeModal = () => {
         setModalIsOpen(false);
       };
-
-    const handleDelete = (item) =>{
-        const id = item._id;
-       
-        const delete_API = `http://localhost:5000/story/${id}`;
-
-        fetch(delete_API,{method:'DELETE',})
-        .then(response=>{
-            if(!response.ok){
-               throw new Error('Network response was not ok!');
-            }
-
-            return response.json();
-        })
-        .then(data=>{
-            console.log('Post deleted:', data);
-        })
-        .catch(error => {
-            console.error('Error deleting post:', error);
-          });
-    }
 
     return (
         <div className='manage-table'>
@@ -51,13 +30,13 @@ const Table = ({ data }) => {
                 </thead>
                 <tbody>
                     {data.map((item) => (
-                        <tr key={item._id}>
+                        <tr key={item.id}>
                             <td>{item.name}</td>
                             <td>{item.text}</td>
                             <td>{item.likes}</td>
                             <td className='tableButtons'>
                                 <button onClick={() => handleRead(item)} className='read'>Read</button>
-                                <button onClick={() => handleDelete(item)} className='delete'>Delete</button>
+                                <button onClick={() => onDelete(item._id)} className='delete'>Delete</button>
                             </td>
                         </tr>
                     ))}

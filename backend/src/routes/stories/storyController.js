@@ -9,7 +9,7 @@ import Story from "../../models/storyModel.js";
 export const getAllStory = asyncHandler(async (req, res) => {
     try {
         console.log("get request is sent!!")
-        const Stories = await Story.find();
+        const Stories = await Story.find().sort({ createdAt: -1 });
         res.status(200).json(Stories);
     }
     catch (err) {

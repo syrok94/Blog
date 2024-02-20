@@ -4,6 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "install-backend": "npm install --prefix backend",
+    "install-frontend": "npm install --prefix frontend",
+    "install": "npm run install-backend && npm run install-frontend",
     "backend": "cd backend && npm run watch",
     "frontend": "cd frontend && npm start",
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
@@ -14,5 +17,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "morgan": "^1.10.0",
+    "pm2": "^5.3.1"
   }
 }

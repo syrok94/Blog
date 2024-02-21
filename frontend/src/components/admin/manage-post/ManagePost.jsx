@@ -10,7 +10,7 @@ function ManagePost() {
   
   const [tableData, setTableData] = useState([]);
 
-  const get_API = "http://localhost:5000/story";
+  const get_API = "https://localhost:5000/story";
 
   useEffect(() => {
     fetchData();
@@ -28,7 +28,7 @@ function ManagePost() {
   const handleDelete = (item) =>{
       const id = item._id;
      
-      const delete_API = `http://localhost:5000/story/${id}`;
+      const delete_API = `https://localhost:5000/story/${id}`;
 
       fetch(delete_API,{method:'DELETE',})
       .then(response=>{

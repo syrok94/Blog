@@ -9,7 +9,7 @@ import PostCard from "../../components/postCard/PostCard"
 
 function Homepage() {
   
-  const get_API = "http://localhost:5000/story";
+  const get_API = "https://localhost:5000/story";
 
   const [allData , setdata] = useState([]);
 

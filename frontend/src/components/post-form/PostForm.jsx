@@ -4,7 +4,7 @@ import './PostForm.css';
 
 function PostForm() {
 
-    const post_API = "http://localhost:5000/story";
+    const post_API = "https://localhost:5000/story";
 
     const [formData, setFormData] = useState({
         name: '',

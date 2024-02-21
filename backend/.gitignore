@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+/cert.pem
+/key.pem
 # production
 /build
 
